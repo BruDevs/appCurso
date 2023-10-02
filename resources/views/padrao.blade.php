@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
-    <title>Material Design Icons | PlainAdmin Demo</title>
+    <title>PlainAdmin Demo | Bootstrap 5 Admin Template</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
     <link rel="stylesheet" href="assets/css/fullcalendar.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
@@ -33,7 +34,6 @@
           <li class="nav-item nav-item-has-children">
             <a
               href="#0"
-              class="collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#ddmenu_1"
               aria-controls="ddmenu_1"
@@ -50,9 +50,9 @@
               </span>
               <span class="text">Dashboard</span>
             </a>
-            <ul id="ddmenu_1" class="collapse dropdown-nav">
+            <ul id="ddmenu_1" class="collapse show dropdown-nav">
               <li>
-                <a href="index.html"> eCommerce </a>
+                <a href="index.html" class="active"> eCommerce </a>
               </li>
             </ul>
           </li>
@@ -67,24 +67,86 @@
               aria-label="Toggle navigation"
             >
               <span class="icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <i class="mdi mdi-fire-off"></i>                  
+              <path
+                    d="M11.8097 1.66667C11.8315 1.66667 11.8533 1.6671 11.875 1.66796V4.16667C11.875 5.43232 12.901 6.45834 14.1667 6.45834H16.6654C16.6663 6.48007 16.6667 6.50186 16.6667 6.5237V16.6667C16.6667 17.5872 15.9205 18.3333 15 18.3333H5.00001C4.07954 18.3333 3.33334 17.5872 3.33334 16.6667V3.33334C3.33334 2.41286 4.07954 1.66667 5.00001 1.66667H11.8097ZM6.66668 7.70834C6.3215 7.70834 6.04168 7.98816 6.04168 8.33334C6.04168 8.67851 6.3215 8.95834 6.66668 8.95834H10C10.3452 8.95834 10.625 8.67851 10.625 8.33334C10.625 7.98816 10.3452 7.70834 10 7.70834H6.66668ZM6.04168 11.6667C6.04168 12.0118 6.3215 12.2917 6.66668 12.2917H13.3333C13.6785 12.2917 13.9583 12.0118 13.9583 11.6667C13.9583 11.3215 13.6785 11.0417 13.3333 11.0417H6.66668C6.3215 11.0417 6.04168 11.3215 6.04168 11.6667ZM6.66668 14.375C6.3215 14.375 6.04168 14.6548 6.04168 15C6.04168 15.3452 6.3215 15.625 6.66668 15.625H13.3333C13.6785 15.625 13.9583 15.3452 13.9583 15C13.9583 14.6548 13.6785 14.375 13.3333 14.375H6.66668Z" />
+                  <path
+                    d="M13.125 2.29167L16.0417 5.20834H14.1667C13.5913 5.20834 13.125 4.74197 13.125 4.16667V2.29167Z" />
+                </svg>
+              </span>
+              <span class="text">Categoria</span>
+            </a>
+            <ul id="ddmenu_2" class="collapse dropdown-nav">
+              <li>
+                <a href="{{route(/'cad-categoria')}}"> Cadastrar </a>
+              </li>
+              <li>
+                <a href="blank-page.html"> Gerenciar </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_Curso"
+              aria-controls="ddmenu_Curso"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+              <i class="mdi mdi-fire-off"></i>
                   <path
                     d="M11.8097 1.66667C11.8315 1.66667 11.8533 1.6671 11.875 1.66796V4.16667C11.875 5.43232 12.901 6.45834 14.1667 6.45834H16.6654C16.6663 6.48007 16.6667 6.50186 16.6667 6.5237V16.6667C16.6667 17.5872 15.9205 18.3333 15 18.3333H5.00001C4.07954 18.3333 3.33334 17.5872 3.33334 16.6667V3.33334C3.33334 2.41286 4.07954 1.66667 5.00001 1.66667H11.8097ZM6.66668 7.70834C6.3215 7.70834 6.04168 7.98816 6.04168 8.33334C6.04168 8.67851 6.3215 8.95834 6.66668 8.95834H10C10.3452 8.95834 10.625 8.67851 10.625 8.33334C10.625 7.98816 10.3452 7.70834 10 7.70834H6.66668ZM6.04168 11.6667C6.04168 12.0118 6.3215 12.2917 6.66668 12.2917H13.3333C13.6785 12.2917 13.9583 12.0118 13.9583 11.6667C13.9583 11.3215 13.6785 11.0417 13.3333 11.0417H6.66668C6.3215 11.0417 6.04168 11.3215 6.04168 11.6667ZM6.66668 14.375C6.3215 14.375 6.04168 14.6548 6.04168 15C6.04168 15.3452 6.3215 15.625 6.66668 15.625H13.3333C13.6785 15.625 13.9583 15.3452 13.9583 15C13.9583 14.6548 13.6785 14.375 13.3333 14.375H6.66668Z" />
                   <path
                     d="M13.125 2.29167L16.0417 5.20834H14.1667C13.5913 5.20834 13.125 4.74197 13.125 4.16667V2.29167Z" />
                 </svg>
               </span>
-              <span class="text">Pages</span>
+              <span class="text">Curso</span>
             </a>
-            <ul id="ddmenu_2" class="collapse dropdown-nav">
+            <ul id="ddmenu_Curso" class="collapse dropdown-nav">
               <li>
-                <a href="settings.html"> Settings </a>
+                <a href="settings.html"> Cadastrar </a>
               </li>
               <li>
-                <a href="blank-page.html"> Blank Page </a>
+                <a href="blank-page.html"> Gerenciar </a>
               </li>
             </ul>
           </li>
+
+
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_Aula"
+              aria-controls="ddmenu_Aula"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+              <i class="lni lni-certificate">  </i>
+                  <path
+                    d="M11.8097 1.66667C11.8315 1.66667 11.8533 1.6671 11.875 1.66796V4.16667C11.875 5.43232 12.901 6.45834 14.1667 6.45834H16.6654C16.6663 6.48007 16.6667 6.50186 16.6667 6.5237V16.6667C16.6667 17.5872 15.9205 18.3333 15 18.3333H5.00001C4.07954 18.3333 3.33334 17.5872 3.33334 16.6667V3.33334C3.33334 2.41286 4.07954 1.66667 5.00001 1.66667H11.8097ZM6.66668 7.70834C6.3215 7.70834 6.04168 7.98816 6.04168 8.33334C6.04168 8.67851 6.3215 8.95834 6.66668 8.95834H10C10.3452 8.95834 10.625 8.67851 10.625 8.33334C10.625 7.98816 10.3452 7.70834 10 7.70834H6.66668ZM6.04168 11.6667C6.04168 12.0118 6.3215 12.2917 6.66668 12.2917H13.3333C13.6785 12.2917 13.9583 12.0118 13.9583 11.6667C13.9583 11.3215 13.6785 11.0417 13.3333 11.0417H6.66668C6.3215 11.0417 6.04168 11.3215 6.04168 11.6667ZM6.66668 14.375C6.3215 14.375 6.04168 14.6548 6.04168 15C6.04168 15.3452 6.3215 15.625 6.66668 15.625H13.3333C13.6785 15.625 13.9583 15.3452 13.9583 15C13.9583 14.6548 13.6785 14.375 13.3333 14.375H6.66668Z" />
+                  <path
+                    d="M13.125 2.29167L16.0417 5.20834H14.1667C13.5913 5.20834 13.125 4.74197 13.125 4.16667V2.29167Z" />
+                </svg>
+              </span>
+              <span class="text">Aula</span>
+            </a>
+            <ul id="ddmenu_Aula" class="collapse dropdown-nav">
+              <li>
+                <a href="settings.html"> Cadastrar </a>
+              </li>
+              <li>
+                <a href="blank-page.html"> Gerenciar </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="invoice.html">
               <span class="icon">
@@ -167,8 +229,8 @@
           </li>
           <li class="nav-item nav-item-has-children">
             <a
-              href="icons.html"
-              class=""
+              href="#0"
+              class="collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#ddmenu_55"
               aria-controls="ddmenu_55"
@@ -191,12 +253,12 @@
               </span>
               <span class="text">Icons</span>
             </a>
-            <ul id="ddmenu_55" class="collapse show dropdown-nav">
+            <ul id="ddmenu_55" class="collapse dropdown-nav">
               <li>
                 <a href="icons.html"> LineIcons </a>
               </li>
               <li>
-                <a href="mdi-icons.html" class="active"> MDI Icons </a>
+                <a href="mdi-icons.html"> MDI Icons </a>
               </li>
             </ul>
           </li>
@@ -220,7 +282,7 @@
             </a>
             <ul id="ddmenu_5" class="collapse dropdown-nav">
               <li>
-                <a href="form-elements.html"> Form Elements </a>
+                <a href="form-elements.html"> From Elements </a>
               </li>
             </ul>
           </li>
@@ -433,8 +495,7 @@
                         </div>
                         <div class="content">
                           <h4 class="text-sm">Adam Joe</h4>
-                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
-                            href="#">Email@gmail.com</a>
+                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs" href="#">Email@gmail.com</a>
                         </div>
                       </div>
                     </li>
@@ -469,353 +530,13 @@
       </header>
       <!-- ========== header end ========== -->
 
-      <!-- ========== section start ========== -->
-      <section class="section">
-        <div class="container-fluid">
-          <!-- ========== title-wrapper start ========== -->
-          <div class="title-wrapper pt-30">
-            <div class="row align-items-center">
-              <div class="col-md-6">
-                <div class="title">
-                  <h2>Icons</h2>
-                </div>
-              </div>
-              <!-- end col -->
-              <div class="col-md-6">
-                <div class="breadcrumb-wrapper">
-                  <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="#0">Dashboard</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        Icons
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-              <!-- end col -->
-            </div>
-            <!-- end row -->
-          </div>
-          <!-- ========== title-wrapper end ========== -->
-          <div class="icons-wrapper">
-            <div class="row">
-              <div class="col-12">
-                <div class="card-style">
-                  <div class="title d-flex justify-content-between">
-                    <div class="left">
-                      <h6 class="text-medium mb-10">Icons Pack</h6>
-                    </div>
-                  </div>
-                  <!-- End Title -->
-                  <div class="icons" id="newIcons">
-                    <div><i class="mdi mdi-abacus"></i><span>abacus</span></div>
-                    <div>
-                      <i class="mdi mdi-alarm-light-off"></i><span>alarm-light-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-alarm-light-off-outline"></i><span>alarm-light-off-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-broadcast"></i><span>broadcast</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-broadcast-off"></i><span>broadcast-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-calendar-clock-outline"></i><span>calendar-clock-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-chat-question"></i><span>chat-question</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-chat-question-outline"></i><span>chat-question-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-check-decagram-outline"></i><span>check-decagram-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-clipboard-clock"></i><span>clipboard-clock</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-clipboard-clock-outline"></i><span>clipboard-clock-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-clock"></i><span>cookie-clock</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-clock-outline"></i><span>cookie-clock-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-edit"></i><span>cookie-edit</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-edit-outline"></i><span>cookie-edit-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-lock"></i><span>cookie-lock</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-lock-outline"></i><span>cookie-lock-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-off"></i><span>cookie-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-off-outline"></i><span>cookie-off-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-refresh"></i><span>cookie-refresh</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-cookie-refresh-outline"></i><span>cookie-refresh-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-dog-side-off"></i><span>dog-side-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-fan-auto"></i><span>fan-auto</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-fire-off"></i><span>fire-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-firework-off"></i><span>firework-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-food-turkey"></i><span>food-turkey</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-gift-off"></i><span>gift-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-gift-off-outline"></i><span>gift-off-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-gift-open"></i><span>gift-open</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-gift-open-outline"></i><span>gift-open-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-kettle-pour-over"></i><span>kettle-pour-over</span>
-                    </div>
-                    <div><i class="mdi mdi-koala"></i><span>koala</span></div>
-                    <div>
-                      <i class="mdi mdi-message-question"></i><span>message-question</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-message-question-outline"></i><span>message-question-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-message-reply-outline"></i><span>message-reply-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-message-reply-text-outline"></i><span>message-reply-text-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-check"></i><span>movie-check</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-check-outline"></i><span>movie-check-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-cog"></i><span>movie-cog</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-cog-outline"></i><span>movie-cog-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-minus"></i><span>movie-minus</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-minus-outline"></i><span>movie-minus-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-off"></i><span>movie-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-off-outline"></i><span>movie-off-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-check"></i><span>movie-open-check</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-check-outline"></i><span>movie-open-check-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-cog"></i><span>movie-open-cog</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-cog-outline"></i><span>movie-open-cog-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-edit"></i><span>movie-open-edit</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-edit-outline"></i><span>movie-open-edit-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-minus"></i><span>movie-open-minus</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-minus-outline"></i><span>movie-open-minus-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-off"></i><span>movie-open-off</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-off-outline"></i><span>movie-open-off-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-play"></i><span>movie-open-play</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-play-outline"></i><span>movie-open-play-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-plus"></i><span>movie-open-plus</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-plus-outline"></i><span>movie-open-plus-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-remove"></i><span>movie-open-remove</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-remove-outline"></i><span>movie-open-remove-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-settings"></i><span>movie-open-settings</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-settings-outline"></i><span>movie-open-settings-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-star"></i><span>movie-open-star</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-open-star-outline"></i><span>movie-open-star-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-play"></i><span>movie-play</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-play-outline"></i><span>movie-play-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-plus"></i><span>movie-plus</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-plus-outline"></i><span>movie-plus-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-remove"></i><span>movie-remove</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-remove-outline"></i><span>movie-remove-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-settings"></i><span>movie-settings</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-settings-outline"></i><span>movie-settings-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-star"></i><span>movie-star</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-movie-star-outline"></i><span>movie-star-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-projector-screen-outline"></i><span>projector-screen-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-robot-happy"></i><span>robot-happy</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-robot-happy-outline"></i><span>robot-happy-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-script-text-key"></i><span>script-text-key</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-script-text-key-outline"></i><span>script-text-key-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-script-text-play"></i><span>script-text-play</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-script-text-play-outline"></i><span>script-text-play-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-star-shooting"></i><span>star-shooting</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-star-shooting-outline"></i><span>star-shooting-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-surround-sound-2-1"></i><span>surround-sound-2-1</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-surround-sound-5-1-2"></i><span>surround-sound-5-1-2</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-table-picnic"></i><span>table-picnic</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-down"></i><span>tag-arrow-down</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-down-outline"></i><span>tag-arrow-down-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-left"></i><span>tag-arrow-left</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-left-outline"></i><span>tag-arrow-left-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-right"></i><span>tag-arrow-right</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-right-outline"></i><span>tag-arrow-right-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-up"></i><span>tag-arrow-up</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-tag-arrow-up-outline"></i><span>tag-arrow-up-outline</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-train-car-passenger"></i><span>train-car-passenger</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-train-car-passenger-door"></i><span>train-car-passenger-door</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-train-car-passenger-door-open"></i><span>train-car-passenger-door-open</span>
-                    </div>
-                    <div>
-                      <i class="mdi mdi-train-car-passenger-variant"></i><span>train-car-passenger-variant</span>
-                    </div>
-                    <div><i class="mdi mdi-turkey"></i><span>turkey</span></div>
-                    <div>
-                      <i class="mdi mdi-webcam-off"></i><span>webcam-off</span>
-                    </div>
-                  </div>
 
-                  <a href="https://materialdesignicons.com/" class="text-primary">and 5000+ icons.</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end container -->
-      </section>
-      <!-- ========== section end ========== -->
+
+
+@yield('conteudo')
+
+
+
 
       <!-- ========== footer start =========== -->
       <footer class="footer">
@@ -844,18 +565,3 @@
         <!-- end container -->
       </footer>
       <!-- ========== footer end =========== -->
-    </main>
-    <!-- ======== main-wrapper end =========== -->
-
-    <!-- ========= All Javascript files linkup ======== -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/Chart.min.js"></script>
-    <script src="assets/js/dynamic-pie-chart.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/fullcalendar.js"></script>
-    <script src="assets/js/jvectormap.min.js"></script>
-    <script src="assets/js/world-merc.js"></script>
-    <script src="assets/js/polyfill.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
